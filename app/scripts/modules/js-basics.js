@@ -6,21 +6,53 @@
     JS_BASICS.isNumberEven = function(i) {
         // i will be an integer.
         // Return true if it's even, and false if it isn't.
+        if (typeof i === 'number') {
+          if ( i % 2 === 0) {
+            return true;
+          } else {
+          return false;
+          }
+        }
     };
 
     JS_BASICS.getFileExtension = function(str) {
         // str will be a string, but it may not have a file extension.
         // Return the file extension (with no period) if it has one, otherwise false
+        if (typeof str === 'string') {
+          var strArray = str.split('.');
+          if (strArray.length > 1) {
+            return strArray[strArray.length - 1];
+          } else {
+            return false;
+          }
+        }
     };
 
     JS_BASICS.longestString = function(arr) {
         // arr will be an array.
         // Return the longest string in the array
+        if(Array.isArray(arr)) {
+          var longestString = "";
+          for ( var i=0 ; i<arr.length; i++) {
+            if(typeof arr[i] === "string" ) {
+              if(arr[i].length > longestString.length) {
+                longestString = arr[i];
+              }
+            }
+          }
+          return longestString;
+        }
     };
 
     JS_BASICS.reverseString = function(str) {
         // str will be an string
         // Return a new string who's characters are in the opposite order to str's.
+        if(typeof str === 'string') {
+          var arr = str.split('');
+          arr.reverse();
+          var strReverse = arr.join('');
+          return strReverse;
+        }
     };
 
     JS_BASICS.isPalindrome = function(str) {
