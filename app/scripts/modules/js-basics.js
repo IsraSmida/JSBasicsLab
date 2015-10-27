@@ -58,11 +58,27 @@
     JS_BASICS.isPalindrome = function(str) {
         // str will be an string
         // Return true if it is a palindrome and false otherwise. It should be case insensitive and not consider space or punctuation.
+        if(typeof str === 'string') {
+          if(JS_BASICS.reverseString(str.toUpperCase()) === str.toUpperCase()) {
+            return true;
+          } else {
+            return false;
+          }
+        }
     };
 
     JS_BASICS.nestedSum = function(arr) {
         // arr will be an array, containing integers, strings and/or arrays like itself
         // Return the sum all the numbers you find, anywhere in the nest of arrays.
+        var somme=0;
+        if (typeof arr === 'number') {
+          somme += arr;
+        } else if(Array.isArray(arr)){
+          for ( var i=0 ; i<arr.length; i++) {
+            somme += JS_BASICS.nestedSum(arr[i]);
+          }
+        }
+        return somme;
     };
 
     global.JS_BASICS = JS_BASICS;
