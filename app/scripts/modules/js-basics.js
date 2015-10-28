@@ -59,7 +59,7 @@
         // str will be an string
         // Return true if it is a palindrome and false otherwise. It should be case insensitive and not consider space or punctuation.
         if(typeof str === 'string') {
-          if(JS_BASICS.reverseString(str.toUpperCase()) === str.toUpperCase()) {
+          if(JS_BASICS.reverseString(str.toUpperCase().split(' ').join('')) === str.toUpperCase().split(' ').join('')) {
             return true;
           } else {
             return false;
